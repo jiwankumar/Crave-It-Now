@@ -4,6 +4,7 @@ import cors from 'cors';
 import { connectDB } from './config/db.js';
 import foodRouter from './routes/foodRoute.js';
 import userRouter from './routes/userRoute.js';
+import cartRouter from './routes/cartRoute.js';
 
  const app=express();
  const port=4000
@@ -12,6 +13,7 @@ import userRouter from './routes/userRoute.js';
 app.use(express.json());
  app.use(cors());
 
+
 //  db connection
 connectDB();
 
@@ -19,6 +21,7 @@ connectDB();
 app.use('/api/food',foodRouter);
 app.use('/images',express.static('uploads'))
 app.use('/api/user',userRouter)
+app.use('/api/cart',cartRouter);
 
  app.get('/',(req,res)=>{
     res.send('Welcome Api Working ')
