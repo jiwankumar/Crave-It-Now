@@ -5,11 +5,13 @@
     box-shadow: 0px 0px 10px #00000015;
     transition: 0.3s;
     animation: fadeIn 1s;
+    height: 100%; 
 }
 
 .food-item-image{
     width: 100%;
     border-radius: 15px 15px 0px 0px;
+    aspect-ratio: 1;
 }
 
 .food-item-info{
@@ -71,6 +73,5 @@
 }
 
 .food-item-counter img{
-    width: 30px;
-    
+    width: 30px;   
 }

@@ -25,6 +25,10 @@
     align-items: start;
     gap: 20px;
 }
+.footer-content-left b{
+    font-size: 35px;
+    color: tomato;
+}
 
 .footer-content-left li,.footer-content-right li,.footer-content-center li{
 

@@ -8,9 +8,16 @@
 }
 
 .navbar .logo{
-    width: 150px;
-
+    width: 120px;
+    font-size: 35px;
+    color: tomato;
+    transition: color 0.3s ease;
+    /* font-weight: 500; */
 }
+
+.navbar .logo:hover {
+    color: teal; /* New color on hover */
+  }
 
 .navbar-menu{
     display: flex;
