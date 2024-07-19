@@ -19,7 +19,7 @@ const AppDownload = () => {
             <img src={assets.play_store} alt=""  onClick={openPlayStore}/>
             <img src={assets.app_store} alt="" onClick={openAppStore} />
         </div>
-      
+      <br />
     </div>
   )
 }

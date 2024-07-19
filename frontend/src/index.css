@@ -10,9 +10,22 @@
   scroll-behavior: smooth;
 }
 
-body{
+:root {
+  --background-color: white;
+  --text-color: black;
+}
+
+[data-theme='dark'] {
+  --background-color: black;
+  --text-color: white;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
   min-height: 100vh;
 }
+
 
 a{
   text-decoration: none;
