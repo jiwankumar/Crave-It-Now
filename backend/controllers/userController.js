@@ -33,15 +33,18 @@ const loginUser = async (req, res) => {
 
 const createToken = (id) => {
     if (!process.env.JWT_SECRET) {
-      throw new Error('JWT_SECRET is not defined');
+        throw new Error('JWT_SECRET is not defined');
     }
-  
-    const token = jwt.sign({ id }, process.env.JWT_SECRET, {
-      expiresIn: '24h' // You can adjust the token expiration time as needed
-    });
-  
+
+    const token = jwt.sign({ id }, process.env.JWT_SECRET);
+
+    if (!token) {
+        console.log("Error creating token");
+        return null;
+    }
+
     return token;
-  };
+};
 
 // register user
 

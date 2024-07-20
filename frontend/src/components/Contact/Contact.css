@@ -1,4 +1,89 @@
 
+   :root {
+    --background-light: #d4d4d4;
+    --background-dark: #776a6a;
+    --text-light: #000;
+    --text-dark: #fff;
+    --input-background-light: #fff;
+    --input-background-dark: #555;
+    --input-border-light: #ccc;
+    --input-border-dark: #777;
+    --button-background-light: #2b9391;
+    --button-background-dark: #0056b3;
+    --button-hover-light: #b33535;
+    --button-hover-dark: #003f7f;
+    --success-light: green;
+    --success-dark: #4caf50;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-light: var(--background-dark);
+      --text-light: var(--text-dark);
+      --input-background-light: var(--input-background-dark);
+      --input-border-light: var(--input-border-dark);
+      --button-background-light: var(--button-background-dark);
+      --button-hover-light: var(--button-hover-dark);
+      --success-light: var(--success-dark);
+    }
+  }
+  
+  .contact-us {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: var(--background-light);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: var(--text-light);
+  }
+  
+  .contact-us h2 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .contact-us form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .contact-us label {
+    margin-bottom: 10px;
+  }
+  
+  .contact-us input,
+  .contact-us textarea {
+    padding: 10px;
+    border: 1px solid var(--input-border-light);
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 16px;
+    background-color: var(--input-background-light);
+    color: var(--text-light);
+  }
+  
+  .contact-us button {
+    padding: 10px;
+    background-color: var(--button-background-light);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .contact-us button:hover {
+    background-color: var(--button-hover-light);
+  }
+  
+  .success-message {
+    color: var(--success-light);
+    margin-top: 10px;
+  }
+  
+
+  /* 
 
 .contact-us {
     max-width: 600px;
@@ -50,4 +135,4 @@
     color: green;
     margin-top: 10px;
   }
-  
+   */

@@ -9,6 +9,7 @@ const authMiddleware=async (req, res, next) =>{
     }
     try{
         const token_decode=jwt.verify(token,process.env.JWT_SECRET);
+        if(!token_decode) return ;
         req.body.userId=token_decode.id;
         next();
     }
@@ -17,5 +18,7 @@ const authMiddleware=async (req, res, next) =>{
         return res.status(403).json({success:false,message:"Token is not valid!"});
     }
 }
+
+
 
 export default authMiddleware;
