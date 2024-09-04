@@ -25,26 +25,56 @@ const Login = ({setShowLogin}) => {
     //     console.log(data);
     // },[data])
 
-    const onLogin=async(e)=>{
-        e.preventDefault();
-        let newUrl=url;
-        if(currState==='Login'){
-            newUrl+='/api/user/login';
-        }
-        else{
-            newUrl+='/api/user/register';
-        }
+    // const onLogin=async(e)=>{
+    //     e.preventDefault();
+    //     let newUrl=url;
+    //     if(currState==='Login'){
+    //         newUrl+='/api/user/login';
+    //     }
+    //     else{
+    //         newUrl+='/api/user/register';
+    //     }
 
-        const response=await axios.post(newUrl,data);
-        if(response.data.token){
-            localStorage.setItem('token',response.data.token);
-            setToken(response.data.token);
-            setShowLogin(false);
+    //     const response=await axios.post(newUrl,data);
+    //     console.log(response);
+    //     if(response.data.token){
+    //         localStorage.setItem('token',response.data.token);
+    //         setToken(response.data.token);
+    //         setShowLogin(false);
+    //     }
+    //     else{
+    //         alert(response.data.message);
+    //     }
+    // }
+    const onLogin = async (e) => {
+        e.preventDefault();
+        let newUrl = url;
+        if (currState === 'Login') {
+            newUrl += '/api/user/login';
+        } else {
+            newUrl += '/api/user/register';
         }
-        else{
-            alert(response.data.message);
+    
+        try {
+            const response = await axios.post(newUrl, data);
+            console.log(response.data); 
+            // Log the response data
+                console.log(data);
+                            
+            if (response.data.token) {
+                alert("Registration successful")
+                localStorage.setItem('token', response.data.token);
+                setToken(response.data.token);
+                setShowLogin(false);
+            } else {
+                alert(response.data.msg);
+            }
+        } catch (error) {
+            console.error('An error occurred during registration:', error);
+            alert('Registration failed. Please try again.');
         }
     }
+    
 
   return (
     <div className='login-popup'>
